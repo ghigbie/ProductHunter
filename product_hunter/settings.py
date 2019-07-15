@@ -56,7 +56,7 @@ ROOT_URLCONF = 'product_hunter.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['product_hunter/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
