@@ -2,6 +2,20 @@
 
 {% block content %}
 
-    <h1>Signup</h1>
-
+    <h1>Sign Up!</h1>
+    <from method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+        Username:
+        <br/>
+        <imput type="text" name="username" />
+        <br/>
+        Password:
+        <br/>
+        <input type="password" name="password" />
+        <br/>
+        Password Confirm:
+        <br/>
+        <input type="password" name="password_confirm" />
+    </from>
+    
 {% endblock %}
