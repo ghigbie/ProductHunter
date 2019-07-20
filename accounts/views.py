@@ -1,11 +1,11 @@
 from django.shortcuts import render
 
 def signup(request):
-    pass
+    render(request, 'accounts/signup.html')
 
 def login(request):
-    pass
+    render(request, 'accounts/login.html')
 
 def logout(request):
-    pass
+    render(request, 'accounts/logout.html')
 
