@@ -21,12 +21,12 @@ def signup(request):
 
 def login(request):
     if request.method == 'POST':
-        user = auth.authenticate(username=request.Post['username'], password=request.POST['password'])
+        user = auth.authenticate(username=request.POST['username'], password=request.POST['password'])
         if user is not None:
             auth.login(request, user)
-            return redirect('home.html')
+            return redirect('home')
         else:
-            return render(request, 'accounts/login', 
+            return render(request, 'accounts/login.html', 
                          {'error': 'This is not a valid login. Please try again.'})
     else:
         return render(request, 'accounts/login.html')
