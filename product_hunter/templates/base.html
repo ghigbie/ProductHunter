@@ -24,7 +24,16 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ml-auto">
                         {% if user.is_autheticated %}
-                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                        <a class="nav-item nav-link" 
+                           href="document.getElementById('logout').submit()">
+                           Logout
+                        </a>
+                        <form id='logout'
+                              method="POST"
+                              action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <input type="hidden"/>
+                        </form>
                         {% else %}
                         <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
                         <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
