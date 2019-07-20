@@ -8,19 +8,25 @@
     {% csrf_token %}
         Username:
         <br/>
-        <input type="text" name="username" />
+        <input type="text" 
+               name="username" />
         <br/>
         <br/>
         Password:
         <br/>
-        <input type="password" name="password" />
+        <input type="password"   
+               name="password" />
         <br/>
         <br/>
         Password Confirm:
         <br/>
-        <input type="password" name="password_confirm" />
+        <input type="password" 
+               name="password_confirm" />
         <br>
-        <input type="submit" text="Sign Up!"/>
+        <br>
+        <input type="submit" 
+                text="Sign Up!"
+                class="btn btn-primary"/>
     </form>
     <br>
 {% endblock %}
