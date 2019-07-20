@@ -4,18 +4,24 @@
 
     <h1>Login...Yeah!</h1>
     <br>
-    <form method="POST" action="{% url 'login' %}">
+    <form method="POST" 
+          action="{% url 'login' %}">
     {% csrf_token %}
         Username:
         <br>
-        <input type="text" name="username">
+        <input type="text" 
+               name="username">
         <br>
         <br>
         Password:
         <br>
-        <input type="password" name="password">
+        <input type="password" 
+               name="password">
         <br>
-        <input type="submit" text="Sign In!"/>
+        <br>
+        <input type="submit" 
+               text="Sign In!"
+               class="btn btn-primary"/>
     </form>
     <br>
 
