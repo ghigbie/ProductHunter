@@ -32,7 +32,7 @@ def login(request):
         return render(request, 'accounts/login.html')
 
 def logout(request):
-    #TODO: need to route to homepage
-    #and logout
-    return render(request, 'accounts/logout.html')
+    if request.method == 'POST':
+        auth.logout(request)
+        return redirect('home')
 
