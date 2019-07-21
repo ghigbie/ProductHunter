@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 title = 'Product Hunter'
 
@@ -12,3 +13,5 @@ def products(request):
                  {'title' : title,
                   'products': [1, 2, 3, 4, 5]})
 
+def create(request):
+    return render(request, 'produts/create.html')
