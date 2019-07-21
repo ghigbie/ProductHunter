@@ -13,5 +13,6 @@ def products(request):
                  {'title' : title,
                   'products': [1, 2, 3, 4, 5]})
 
+@login_required
 def create(request):
-    return render(request, 'produts/create.html')
+    return render(request, 'products/create.html')

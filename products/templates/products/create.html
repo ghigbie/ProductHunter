@@ -1,5 +1,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Add new product</h1>
+<h1>Add new product below:</h1>
+<br>
+{% if error %}
+<div class="alert alert-danger"
+     role="alert">
+     {{ error }}
+</div>
+{% endif %}
+<form method="POST"
+      action="{% url 'create' %}"
+      enctype="multipart/form-data">
+{% csrf_token %}
+    Product Name:
+    <br>
+    <input type="text" 
+            name="product_name">
+    <br>
+    <br>
+    Description:
+    <br>
+    <input type="test" 
+           name="description">
+    <br>
+    <br>
+    <input type="submit" 
+           text="Add Product!"
+           class="btn btn-primary"/>
+
+</form>
+<br>
 {% endblock %}
