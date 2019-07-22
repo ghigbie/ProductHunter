@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Product
+from django.utils import timezone
 
 title = 'Product Hunter'
 
@@ -27,7 +28,10 @@ def create(request):
                 product.url = 'http://' + request.POST['url']
             product.icon = request.FILES['icon']
             product.image = request.FILES['image']
-
+            product.pub_date = timezone.datetime.now()
+            product.hunter = request.user
+            product.save()
+            return redirect('home')
         else:
             return render(request, 'products/create.html', 
                           {'error': 'All fields are required.'}) 
